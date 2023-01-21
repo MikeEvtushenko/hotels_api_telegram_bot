@@ -278,12 +278,12 @@ def get_check_in(callback: CallbackQuery, user_data: User) -> None:
         user_data.trip_check_in = int(date_to_unix(f'{result}'))
         user_data.save()
 
-        text = "Выберите дату выбытия: "
+        text = "Выберите дату отъезда: "
         bot.send_message(callback.message.chat.id, text)
         calendar, step = MyStyleCalendar(calendar_id=2, min_date=result, locale='ru').build()
         bot.send_message(
             callback.message.chat.id,
-            f"Дата выбытия {bot_config.calendar.locale[step]}",
+            f"Дата отъезда {bot_config.calendar.locale[step]}",
             reply_markup=calendar
         )
 

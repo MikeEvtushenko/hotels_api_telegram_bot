@@ -75,7 +75,7 @@ def get_history(message: Message, user_data: User) -> None:
 
     message_find: Message = bot.send_message(
         chat_id=message.chat.id,
-        text=f'История последних {bot_config.strings.history_amount}ти поисков...'
+        text=f'История последних {bot_config.strings.history_amount} поисков'
     )
 
     history_data = get_user_history(user_data)
@@ -98,7 +98,7 @@ def get_history(message: Message, user_data: User) -> None:
 
     else:
         bot.edit_message_text(
-            text='У вас еще нет истории поиска!',
+            text='У вас еще нет истории поиска',
             chat_id=message_find.chat.id,
             message_id=message_find.id
         )
